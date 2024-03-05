@@ -1,5 +1,5 @@
-<button>
-	<slot />
+<button on:click>
+	<slot>Button</slot>
 </button>
 
 <style>
@@ -12,5 +12,6 @@
 		font-weight: bold;
 		color: white;
 		font-family: sans-serif;
+		cursor: pointer;
 	}
 </style>
