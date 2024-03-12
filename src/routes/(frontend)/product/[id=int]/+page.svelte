@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import ProductHeader from '../../ProductHeader.svelte';
+	import ProductHeader from '$routes/ProductHeader.svelte';
 
 	$: console.log($page);
 </script>
