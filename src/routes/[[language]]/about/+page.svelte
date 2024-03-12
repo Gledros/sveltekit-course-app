@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { Button } from '$components';
+	import { page } from '$app/stores';
 
 	let name = 'Glenn';
 </script>
@@ -14,6 +15,8 @@
 >
 	Go to Home
 </Button>
+
+{JSON.stringify($page.params)}
 
 <style>
 	h1 {
