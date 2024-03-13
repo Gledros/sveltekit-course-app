@@ -14,7 +14,9 @@
 	<a href="/settings/profile">Profile</a>
 </nav>
 
-<slot />
+<div>
+	<slot />
+</div>
 
 <style>
 	nav {
@@ -34,5 +36,12 @@
 			margin-left: 1rem;
 			margin-right: 2rem;
 		}
+	}
+
+	div {
+		display: flex;
+		padding: 0 2rem;
+		gap: 1rem;
+		height: calc(100vh - 5rem);
 	}
 </style>
