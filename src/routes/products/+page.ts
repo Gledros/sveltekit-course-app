@@ -1,6 +1,7 @@
-export const load = async ({ fetch }) => {
-	const response = await fetch('https://dummyjson.com/products');
-	const data = await response.json();
+import type { PageLoad } from './$types';
 
-	return data;
+export const load: PageLoad = async () => {
+	const products = await (await import('./dummy-products.json')).default;
+
+	return products;
 };

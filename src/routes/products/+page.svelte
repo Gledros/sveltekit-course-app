@@ -1,7 +1,13 @@
-<script>
-	export let data;
+<script lang="ts">
+	import type { PageData } from './$types';
 
-	console.log(data);
+	export let data: PageData;
+
+	console.log(data.products);
 </script>
 
 <h1>Products</h1>
+
+<pre>
+	{JSON.stringify(data, null, 4)}
+</pre>
