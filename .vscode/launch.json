@@ -5,6 +5,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Chrome@localhost",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222"
+      ],
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
       "name": "Edge@localhost",
       "request": "launch",
       "type": "msedge",
@@ -33,6 +53,13 @@
       "configurations": [
         "Edge@localhost",
         "Open Edge DevTools"
+      ]
+    },
+    {
+      "name": "Chrome&DevTools",
+      "configurations": [
+        "Chrome@localhost",
+        "Attach to Chrome"
       ]
     }
   ]
