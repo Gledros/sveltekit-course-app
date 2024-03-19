@@ -10,9 +10,21 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler"
-	}
+	},
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
 	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
 	// from the referenced tsconfig.json - TypeScript does not merge them in
+	"exclude": [
+		"**/node_modules/**",
+		"./page/**/*",
+		"**/dist/**",
+		"**/assets/js/core.js",
+		"**/assets/js/v*.js",
+		"**/assets/js/*.js",
+		"**/packages/**",
+		"**/src/posts/**",
+		"**/src-posts/**",
+		"**/source/_posts/**"
+	]
 }
