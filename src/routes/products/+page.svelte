@@ -25,26 +25,25 @@
 	</ul>
 {/if}
 
-<style lang="scss">
+<style>
 	img {
-		object-fit: scale-down;
+		object-fit: contain;
 		width: 100%;
-		max-width: 25rem;
+		max-width: 18rem;
 		height: 15rem;
+		border-radius: 0.5rem;
 	}
 
 	ul {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-auto-flow: row;
 		gap: 2rem;
 		margin-bottom: 2rem;
 	}
 
 	li {
-		padding: 0.5rem;
 		display: flex;
-		height: 100%;
-		gap: 1rem;
 		border: 1px solid black;
 		border-radius: 0.5rem;
 		align-items: center;
@@ -62,7 +61,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		height: 100%;
+		width: 100%;
+		padding: 1rem;
 	}
 
 	p:not(:first-of-type) {
@@ -72,6 +72,32 @@
 
 	a {
 		text-decoration: none;
-		width: calc(33vw - 2.5rem);
 	}
+
+	@media (max-width: 768px) {
+		ul {
+			display: flex;
+			flex-direction: column;
+		}
+
+		img {
+			object-fit: contain;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		ul {
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+	}
+
+	@media (max-width: 1440px) {
+  li {
+		height: 100%;
+    flex-direction: column;
+  }
+}
 </style>
