@@ -72,12 +72,26 @@
 
 	a {
 		text-decoration: none;
+		width: 95vw;
+	}
+
+	@media (min-width: 425px) and (max-width: 768px) {
+		a {
+			width: 60vw;
+		}
+	}
+
+	@media (min-width: 769px){
+		a {
+			width: auto;
+		}
 	}
 
 	@media (max-width: 768px) {
 		ul {
 			display: flex;
 			flex-direction: column;
+			align-items: center;
 		}
 
 		img {
@@ -95,9 +109,9 @@
 	}
 
 	@media (max-width: 1440px) {
-  li {
-		height: 100%;
-    flex-direction: column;
-  }
-}
+		li {
+			height: 100%;
+			flex-direction: column;
+		}
+	}
 </style>
