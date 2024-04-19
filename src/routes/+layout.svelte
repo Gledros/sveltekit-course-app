@@ -1,11 +1,16 @@
 <script>
 	import '../app.css';
+	export let data;
 </script>
 
 <nav>
 	<a href="/">Home</a>
 	<a href="/products">Products</a>
 </nav>
+
+{#if data.user}
+	<p>Logged in as: {data.user.name}</p>
+{/if}
 
 <div>
 	<slot />
@@ -28,5 +33,10 @@
 
 	div {
 		padding: 0 2rem;
+	}
+
+	p {
+		margin-top: 0.5rem;
+		padding: 0.5rem;
 	}
 </style>
