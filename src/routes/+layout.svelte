@@ -1,7 +1,18 @@
 <script>
 	import '../app.css';
+	import { page } from '$app/stores';
+
 	export let data;
 </script>
+
+<svelte:head>
+	{#if $page.data.title}
+		<title>{$page.data.title}</title>
+	{/if}
+	{#if $page.data.description}
+		<meta name="description" content={$page.data.description} />
+	{/if}
+</svelte:head>
 
 <nav>
 	<a href="/">Home</a>
