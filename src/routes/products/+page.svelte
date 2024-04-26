@@ -81,7 +81,7 @@
 		}
 	}
 
-	@media (min-width: 769px){
+	@media (min-width: 769px) {
 		a {
 			width: auto;
 		}
