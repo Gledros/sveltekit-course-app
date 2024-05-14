@@ -1,5 +1,13 @@
-export const load = async () => {
-	const products = await (await import('./dummy-products.json')).default;
+import { error } from '@sveltejs/kit';
 
-	return products;
+export const load = async ({ fetch }) => {
+	const response = await fetch('/api/products');
+
+	let data;
+
+	if (response.ok) data = await response.json();
+
+	if (!data) throw error(response.status, response.statusText);
+
+	return data.products;
 };
