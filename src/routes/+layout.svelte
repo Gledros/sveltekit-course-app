@@ -1,8 +1,6 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
-
-	export let data;
 </script>
 
 <svelte:head>
@@ -18,10 +16,6 @@
 	<a href="/">Home</a>
 	<a href="/products">Products</a>
 </nav>
-
-{#if data.user}
-	<p>Logged in as: {data.user.name}</p>
-{/if}
 
 <div>
 	<slot />
@@ -44,10 +38,5 @@
 
 	div {
 		padding: 0 2rem;
-	}
-
-	p {
-		margin-top: 0.5rem;
-		padding: 0.5rem;
 	}
 </style>
