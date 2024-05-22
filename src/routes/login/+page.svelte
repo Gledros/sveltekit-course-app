@@ -1,5 +1,5 @@
 <script>
-	import { goto } from '$app/navigation';
+	import { invalidateAll } from '$app/navigation';
 
 	let username = '',
 		password = '';
@@ -12,8 +12,9 @@
 
 		const result = await response.json();
 
-		if (response.ok) goto('/');
-		else alert(result.message);
+		if (response.ok) {
+			invalidateAll();
+		} else alert(result.message);
 	};
 </script>
 

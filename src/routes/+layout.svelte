@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { invalidateAll } from '$app/navigation';
 
 	$: data = $page.data;
 </script>
@@ -22,8 +23,10 @@
 	{/if}
 	{#if data.user}
 		<button
-			on:click={() => {
-				fetch('/api/logout', { method: 'POST' });
+			on:click={async () => {
+				const response = await fetch('/api/logout', { method: 'POST' });
+
+				if (response.ok) invalidateAll();
 			}}
 		>
 			Logout
