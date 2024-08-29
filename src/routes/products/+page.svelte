@@ -1,10 +1,17 @@
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
+	import { Button } from '../../lib/components';
+
 	export let data;
 
 	$: products = data.products;
 </script>
 
 <h1>Products</h1>
+
+<div class="parent">
+	<Button class="button" on:click={() => invalidate('app:products')}>Re-run load function</Button>
+</div>
 
 {#if products && products.length > 0}
 	<ul>
@@ -73,6 +80,15 @@
 	a {
 		text-decoration: none;
 		width: 95vw;
+	}
+
+	.parent {
+		width: 50%;
+		margin: auto;
+	}
+
+	.parent :global(.button) {
+		margin: 1rem 0;
 	}
 
 	@media (min-width: 425px) and (max-width: 768px) {
